@@ -9,13 +9,35 @@
 </head>
 
 <body>
-<h2> Username : <?php
+    <!-- <h2> Username : <?php
 
-echo $_POST["fname"].$_POST["lname"].$_POST["gender"];
+                    echo $_POST["fname"] . $_POST["lname"] . $_POST["gender"];
+                    // echo $_GET["fname"].$_GET["lname"].$_GET["gender"];
 
 
 
-?>   </h2>
+                    ?> </h2> -->
+
+
+    <h2>
+        <?php
+        $Num1 = $_POST['fnum'];
+        $Num2 = $_POST['snum'];
+        $op = $_POST['op'];
+        switch ($op) {
+            case 'add':
+                echo "Sum of $Num1 and $Num2 = " . $Num1 + $Num2;
+                break;
+            case 'sub':
+                echo "Sub of $Num1 and $Num2 = " . $Num2 - $Num1;
+                break;
+
+            default:
+                echo "invalid operator name";
+                break;
+        }
+        ?>
+    </h2>
     <h1>PHP Operators</h1>
 
 
@@ -190,7 +212,7 @@ echo "<th>" . "Batch" . "</th>";
 
 foreach ($multiArr as $key => $value) {
     echo "<tr>";
-    echo "<th>".$key. "</th>";
+    echo "<th>" . $key . "</th>";
     foreach ($value as $val) {
 
         echo "<td>" . $val . "</td>";
