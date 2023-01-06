@@ -9,6 +9,9 @@
 </head>
 
 <body>
+
+
+<?php  print_r($_COOKIE['user'])  ?>
     <!-- <h2> Username : <?php
 
                     echo $_POST["fname"] . $_POST["lname"] . $_POST["gender"];

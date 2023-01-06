@@ -14,7 +14,7 @@
 
 <body>
 
-    <form class="container" action="index.php" method="post">
+    <form class="container" action="form.php" method="post">
         <div class="mb-3">
             <label for="" class="form-label">First Name</label>
             <input type="text" class="form-control" name="fname" id="" aria-describedby="helpId" placeholder="" required>
@@ -38,9 +38,31 @@
                 Female
             </label>
         </div>
-        <button class="btn btn-primary">Submit</button>
+        <button class="btn btn-primary" name="submit">Submit</button>
 
     </form>
+
+    <h1>user <?php 
+
+    // print_r($_POST);
+    
+    if(!isset($_POST['submit'])){
+     echo "error" ;
+
+    }else{
+        echo $_POST['fname'] ;
+
+
+
+
+    }
+?> </h1>
+    
+
+
+
+
+
 
 
 
