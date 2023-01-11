@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +8,9 @@
     <title>Document</title>
 </head>
 <body>
+
+<h1>User: </h1>
+
 <?php  print_r($_COOKIE['user'])  ?>
 
 <!-- <button  >Enter User Name</button> -->

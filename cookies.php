@@ -1,9 +1,9 @@
 <?php
 $cookieName = "user";
 $cookieValue = "2206B1";
-setcookie($cookieName, $cookieValue, time() + 3600, "/functions.php");
-setcookie("user" , "Hassan",time()-60,"/");
-echo "Coookies are set";
+setcookie($cookieName, $cookieValue, time() + 3600, "/");
+// setcookie("user", "Hassan", time() - 60, "/");
+// echo "Coookies are set";
 
 ?>
 
@@ -21,25 +21,27 @@ echo "Coookies are set";
 
 
 
-<form action="">
+    <form action="">
 
 
 
-</form>
-<!-- <?php
-//     if(isset($_COOKIE[$cookieName])){
-//    echo $_COOKIE[$cookieName] ;
-//     }
+    </form>
+    <!-- <?php
+            //     if(isset($_COOKIE[$cookieName])){
+            //    echo $_COOKIE[$cookieName] ;
+            //     }
 
 
-    ?> -->
+            ?> -->
 
-    <h1>User: </h1>
+    <h1>User: 
+
+               </h1>
 
 
 
 
-    };
+
 
 </body>
 
