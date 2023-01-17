@@ -36,40 +36,49 @@
         <form action="form.php" method="get">
             <button type="submit" class="btn btn-primary mt-2" name="fetch">Fetch</button>
         </form>
-      
-            <?php
-            include "config.php";
-            if (isset($_GET["fetch"])) {
 
-                $fetch = "SELECT * FROM STUDENTS";
-                $res = mysqli_query($conn, $fetch);
-         
+        <?php
+        include "config.php";
+        if (isset($_GET["fetch"])) {
 
-            ?>
-<table class="table table-striped">
-    <thead>
-      <tr>
-        <th>StudentID</th>
-        <th>StudentName</th>
-        <th>StudentGender</th>
-        <th>Contact</th>
-        <th>City</th>
-      </tr>
-    </thead>
-    <tbody>
-        <?php while ($row = mysqli_fetch_assoc($res)) {  ?>
-      <tr>
-      <td><?php echo $row["studentID"] ?></td>
-      <td><?php echo $row["studentName"] ?></td>
-      <td><?php echo $row["studentGender"] ?></td>
-      <td><?php echo $row["studentContact"] ?></td>
-      <td><?php echo $row["studentCity"] ?></td>
+            $fetch = "SELECT * FROM STUDENTS";
+            $res = mysqli_query($conn, $fetch);
 
-      </tr>
-   <?php       }    ?>
-    </tbody>
-  </table>
-<?php } ?>
+
+        ?>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>StudentID</th>
+                        <th>StudentName</th>
+                        <th>StudentGender</th>
+                        <th>Contact</th>
+                        <th>City</th>
+                        <th>Operations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php while ($row = mysqli_fetch_assoc($res)) {  ?>
+                        <tr>
+                            <td><?php echo $row["studentID"] ?></td>
+                            <td><?php echo $row["studentName"] ?></td>
+                            <td><?php echo $row["studentGender"] ?></td>
+                            <td><?php echo $row["studentContact"] ?></td>
+                            <td><?php echo $row["studentCity"] ?></td>
+                            <td><button class="btn btn-primary">
+                                    <a href="update.php?id=<?php echo $row["studentID"] ?>"
+                                     class="text-white "> Update
+                                    </a></button>
+                                <button class="btn btn-danger">
+                                    <a href="delete.php?id=<?php echo $row["studentID"] ?>" class="text-white "> Delete</a>
+                                </button></td>
+                            <td></td>
+
+                        </tr>
+                    <?php       }    ?>
+                </tbody>
+            </table>
+        <?php } ?>
 
 
 
