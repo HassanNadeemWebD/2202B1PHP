@@ -4,7 +4,7 @@ $localhost = "localhost";
 $username = "root";
 $password = "";
 $db = "class";
-$conn = mysqli_connect($localhost, $username, $password,$db );
+$conn = mysqli_connect($localhost, $username, $password, $db);
 // echo "<pre>";
 
 // print_r($conn);
@@ -20,17 +20,17 @@ if ($conn) {
     echo "error";
 }
 
-$name = $_POST["fname"];
+// $name = $_POST["fname"];
 
-$query = `insert into students(studentName,studentGender,studentContact,studentCity) values 
-($name , "Male" , "03102659874","Khi")`;
+// $query = `insert into students(studentName,studentGender,studentContact,studentCity) values 
+// ($name , "Male" , "03102659874","Khi")`;
 
-if(mysqli_query($conn , $query)){
-
-
-echo "Record Inserted !";
+// if(mysqli_query($conn , $query)){
 
 
-}else{
-echo "error";
-}
+// echo "Record Inserted !";
+
+
+// }else{
+// echo "error";
+// }
