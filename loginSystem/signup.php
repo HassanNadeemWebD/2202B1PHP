@@ -6,7 +6,7 @@ if(isset($_POST['signup'])){
 
 $userName = $_POST['username'];
 $userEmail = $_POST['email'];
-$userPassword = $_POST['password'];
+$userPassword = sha1( $_POST['password']);
 
 $insert = "INSERT INTO USERDETAILS(userName , userEmail , userPassword) 
 VALUES 

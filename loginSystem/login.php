@@ -5,7 +5,7 @@ session_start();
 if (isset($_POST['login'])) {
 
     $useremail = $_POST['email'];
-    $password = $_POST['password'];
+    $password = sha1($_POST['password']);
 
     $login = "SELECT * FROM USERDETAILS WHERE userEmail = '$useremail' AND  userPassword = '$password' ";
 
@@ -21,13 +21,11 @@ if (isset($_POST['login'])) {
 
         echo "Login Failed";
 
-    echo "<script>window.location.href = 'loginform.php';</script>";
-        
-        
-    }else{
-    $_SESSION['user'] = $userName;
+        // echo "<script>window.location.href = 'loginform.php';</script>";
+    } else {
+        $_SESSION['user'] = $userName;
 
 
-    echo "<script>window.location.href = 'profile.php';</script>";
-}
+        echo "<script>window.location.href = 'profile.php';</script>";
+    }
 }
