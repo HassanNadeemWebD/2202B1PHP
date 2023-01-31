@@ -103,6 +103,12 @@ include "conn.php";
 
                 </div>
                 <div class="status"> <?php
+                                        // echo "Hello";
+                             $password_hash =  password_hash("Hello", PASSWORD_BCRYPT);
+                                        echo "<br>";
+                                        // echo password_hash("Hello", PASSWORD_BCRYPT);
+
+                                        echo password_verify("hello" , $password_hash );
 
                                         if (isset($_POST['send'])) {
                                             include "conn.php";
