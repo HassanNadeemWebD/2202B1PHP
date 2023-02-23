@@ -13,7 +13,7 @@
 
     <div class="container  mt-3">
         <h2 class="text-center">Register Youself !</h2>
-        <form action="insert.php" method="post">
+        <form action="insert.php" method="post" enctype="multipart/form-data">
             <div class="mb-3 mt-3">
                 <label for="email">Student Name</label>
                 <input type="text" class="form-control" id="email" placeholder="Enter email" name="sname">
@@ -31,6 +31,10 @@
                 <label for="email">City</label>
                 <input type="text" class="form-control" id="email" placeholder="Enter email" name="scity">
             </div>
+            <div class="mb-3 mt-3">
+                <label for="email">Upload Picture</label>
+                <input type="file" class="form-control" id="email" placeholder="Enter email" name="spicture">
+            </div>
             <button type="submit" name="insert" class="btn btn-primary">Submit</button>
         </form>
         <form action="form.php" method="get">
@@ -41,7 +45,7 @@
         include "config.php";
         if (isset($_GET["fetch"])) {
 
-            $fetch = "SELECT * FROM STUDENTS";
+            $fetch = "SELECT * FROM USERS";
             $res = mysqli_query($conn, $fetch);
 
 
@@ -54,20 +58,21 @@
                         <th>StudentGender</th>
                         <th>Contact</th>
                         <th>City</th>
+                        <th>Picture</th>
                         <th>Operations</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php while ($row = mysqli_fetch_assoc($res)) {  ?>
                         <tr>
-                            <td><?php echo $row["studentID"] ?></td>
-                            <td><?php echo $row["studentName"] ?></td>
-                            <td><?php echo $row["studentGender"] ?></td>
-                            <td><?php echo $row["studentContact"] ?></td>
-                            <td><?php echo $row["studentCity"] ?></td>
+                            <td><?php echo $row["userID"] ?></td>
+                            <td><?php echo $row["userName"] ?></td>
+                            <td><?php echo $row["Gender"] ?></td>
+                            <td><?php echo $row["userContact"] ?></td>
+                            <td><?php echo $row["City"] ?></td>
+                            <td> <img width="100px" height="100px" src="uploads/<?php echo $row["Picture"] ?>" alt=""></td>
                             <td><button class="btn btn-primary">
-                                    <a href="update.php?id=<?php echo $row["studentID"] ?>"
-                                     class="text-white "> Update
+                                    <a href="update.php?id=<?php echo $row["studentID"] ?>" class="text-white "> Update
                                     </a></button>
                                 <button class="btn btn-danger">
                                     <a href="delete.php?id=<?php echo $row["studentID"] ?>" class="text-white "> Delete</a>

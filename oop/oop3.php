@@ -95,3 +95,23 @@ function all()
 // $b1->show();
 $u1 = new User();
 $u1->all();
+
+class Animal{
+    static $animalName;
+}
+
+
+
+
+ Animal :: $animalName = "Hen";
+
+echo  Animal :: $animalName;
+
+$a1 = new Animal();
+Animal :: $animalName = "Tiger";
+echo  Animal :: $animalName;
+
+
+echo  Animal :: $animalName;
+
+ ?>

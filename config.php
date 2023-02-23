@@ -3,7 +3,7 @@
 $localhost = "localhost";
 $username = "root";
 $password = "";
-$db = "class";
+$db = "2202B1";
 $conn = mysqli_connect($localhost, $username, $password, $db);
 // echo "<pre>";
 

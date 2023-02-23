@@ -14,7 +14,19 @@ if (isset($_POST['login'])) {
     // $userID = $row['UserID']
     $userName = $row['userName'];
 
-
+    if(isset($_POST['rememberMe'])){
+        setcookie('useremail',$_POST['email'],time()+4000);
+        setcookie('userpassword',$_POST['password'],time()+4000);
+        echo "cookies are set";
+    }
+    else{
+        echo "cookies are not set";
+    }
+    
+    if(isset($_POST['forget'])){
+        setcookie('useremail',$_POST['email'],time()-4000);
+        setcookie('userpassword',$_POST['password'],time()-4000);
+    }
 
 
     if ($row == 0) {

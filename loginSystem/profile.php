@@ -24,7 +24,7 @@ include "conn.php";
 
 <body>
 
-    <form action="logout.php" method="post">
+    <form action="logout.php" method="post" enctype="multipart/form-data">
 
         <button type="submit" name="logout">logout</button>
     </form>
@@ -92,7 +92,10 @@ include "conn.php";
                                 <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
                                 <label for="message">Message Body</label>
                             </div>
-
+                            <div class="md-form">
+                              <input type="file" name="attachment">
+                                
+                            </div>
                         </div>
                     </div>
                     <!--Grid row-->
@@ -104,11 +107,11 @@ include "conn.php";
                 </div>
                 <div class="status"> <?php
                                         // echo "Hello";
-                             $password_hash =  password_hash("Hello", PASSWORD_BCRYPT);
+                                        $password_hash =  password_hash("Hello", PASSWORD_BCRYPT);
                                         echo "<br>";
                                         // echo password_hash("Hello", PASSWORD_BCRYPT);
 
-                                        echo password_verify("hello" , $password_hash );
+                                        echo password_verify("hello", $password_hash);
 
                                         if (isset($_POST['send'])) {
                                             include "conn.php";

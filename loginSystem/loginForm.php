@@ -16,15 +16,28 @@
     <form action="login.php" method="post">
       <div class="mb-3 mt-3">
         <label for="email">Email:</label>
-        <input type="email" class="form-control" id="email" value placeholder="Enter email" name="email">
+        <input type="email" value="<?php  if(isset($_COOKIE['useremail'])){echo $_COOKIE['useremail'];} ?>" class="form-control" id="email" value placeholder="Enter email" name="email">
       </div>
       <div class="mb-3">
         <label for="pwd">Password:</label>
-        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password">
+        <input type="password" value="<?php if(isset($_COOKIE['userpassword'])){echo $_COOKIE['userpassword'];}?>" class="form-control" id="pwd" placeholder="Enter password" name="password">
       </div>
 
-      <button type="submit" name="login" class="btn btn-primary">Login</button>
-    </form>
+      <div class="form-check">
+  <input name="rememberMe" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label" for="flexCheckDefault">
+    Remember Me
+  </label>
+</div>
+
+<button type="submit" name="login" class="btn btn-primary">Login</button>
+<div class="form-check">
+<input name="forget" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+<label class="form-check-label" for="flexCheckDefault">
+Forget Me
+</label>
+</div>
+</form>
   </div>
 
 </body>
